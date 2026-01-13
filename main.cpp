@@ -48,7 +48,8 @@ Node* buildList(int n) {
     Node* head = nullptr;
     Node* tail = nullptr;
     for (int i = 0; i < n; i++) {
-        int x; cin >> x;
+        int x;
+        cin >> x;
         Node* node = new Node(x);
         if (!head) head = tail = node;
         else { tail->next = node; tail = node; }
@@ -67,12 +68,19 @@ void printList(Node* head) {
 
 int main() {
     int n1, n2;
+
+    cout << "Enter number of digits for first number: ";
     cin >> n1;
+    cout << "Enter digits for first number (space separated): ";
     Node* head1 = buildList(n1);
 
+    cout << "Enter number of digits for second number: ";
     cin >> n2;
+    cout << "Enter digits for second number (space separated): ";
     Node* head2 = buildList(n2);
 
     Node* result = addTwoLists(head1, head2);
+
+    cout << "Result: ";
     printList(result);
 }
